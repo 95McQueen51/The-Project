@@ -21,9 +21,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install fastapi uvicorn pandas pytest
+          pip install -r requirements.txt
 
-      - name: Run backend tests
+      - name: Run unit tests
         run: |
-          cd backend
           pytest
