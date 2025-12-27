@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def calculate_metrics(df):
     avg = df["score"].mean()
     trend = df["score"].iloc[-1] - df["score"].iloc[0]
