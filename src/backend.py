@@ -3,21 +3,30 @@ import pandas as pd
 
 app = FastAPI()
 
+
 # Загружаем данные
 data = pd.read_csv("../data.csv", parse_dates=["date"])
+
+
 
 @app.get("/students")
 def get_students():
     return sorted(data["student"].unique().tolist())
 
+
+
 @app.get("/subjects")
 def get_subjects():
     return sorted(data["subject"].unique().tolist())
+
+
 
 @app.get("/progress")
 def get_progress(student: str, subject: str):
     df = data[(data["student"] == student) & (data["subject"] == subject)]
     return df.to_dict(orient="records")
+
+
 
 @app.get("/metrics")
 def get_metrics(student: str, subject: str):
