@@ -1,6 +1,3 @@
-Проверка данных в CSV.
-
-python
 import pandas as pd
 
 df = pd.read_csv("data.csv")
