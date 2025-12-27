@@ -39,4 +39,3 @@ def test_get_metrics():
     data = response.json()
     assert "average_score" in data
     assert "trend" in data
-
